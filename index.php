@@ -7,11 +7,17 @@ if(isset($_SESSION['logged_in'])){
 include('database/config.php');
 include('user/database/users.php');
 include('admin/database/admin.php');
+include('cloud_eng/database/cloud_eng.php');
 
 $database = new database();
 $db = $database->getConnection();
 $user = new users($db);
 $admin = new admin($db);
+$cloud_eng = new cloud_eng($db);
+
+//passwords: ali
+//shahid
+//ansari
 
 ?>
 
@@ -67,6 +73,7 @@ body{
             <select name="role" class="form-control">
               <option value="user">User</option>
               <option value="admin">Admin</option>
+              <option value="cloud_eng">Cloud Engineear</option>
             </select>
           <div class="form-group">
             <div class="checkbox">
@@ -101,6 +108,8 @@ body{
                   break;
                   case 'admin':
                     $admin->login($email,$password);
+                  case 'cloud_eng':
+                      $cloud_eng->login($email,$password);
                   break;
                   default:
                     echo "Please select the correct role";
