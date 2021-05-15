@@ -6,29 +6,6 @@ $db = $database->getConnection();
 $complaint = new complaint($db);
 
 
-
-if(isset($_POST['id'])): 
-	$id = $_POST['id'];
-	$query = "SELECT * FROM complaints WHERE complaintNo=$id";
-	$complaints = $complaint->get_complaints_by_uid($query);
-	foreach($complaints as $cmp){
-//		$cmp->complaintNo;
-	}
-	
-	
-?>
-<h4>Complaint Details: </h4>
-<table class="table table-b" >
-	<tr>
-		<td>Complaint Number:</td>
-		<td width="40%"><?php echo $cmp->complaintNo; ?></td>
-
-		<td>Regd Date:</td>
-		<td><?php echo date('d-m-Y',strtotime($cmp->rgdDate)); ?></td>
-
-
-	</tr>
-
 	<tr>
 		<td>Category:</td>
 		<td>
