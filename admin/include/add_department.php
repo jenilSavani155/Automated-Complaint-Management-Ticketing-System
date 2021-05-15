@@ -1,7 +1,29 @@
 
 <div class="row">
 	<div class="col-sm-8">
+		<h4>Add Department area</h4>
 		
+		<?php
+		if(isset($_POST['submit'])){
+			$departmentName = $_POST['dptName'];
+			$query = "INSERT INTO department(department)VALUES('$departmentName')";
+			$department->add_data($query);	
+		
+		}
+
+		?>
+		<form method="post" action="<?php $_SERVER['PHP_SELF']; ?>" id="myForm">
+			<label>Department Name:</label>
+			<input type="text" name="dptName" id="dptName" class="form-control" placeholder="Enter department name" required>
+			
+			<br>
+			<input type="submit" name="submit" value="Create" id="create" class="btn btn-sm btn-primary">
+			<input type="hidden" name="update" value="Update" id="update" class="btn btn-sm btn-primary">
+			<input type="hidden" name="department_id" id="department_id">
+		</form>
+	</div>
+</div>
+<br>
 <div id="result"></div>
 <h4>Manage Departments</h4>
 <hr>
