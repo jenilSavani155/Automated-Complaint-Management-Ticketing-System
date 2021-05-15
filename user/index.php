@@ -57,7 +57,7 @@ error_reporting(0);
 		<h2>Welcome to our system</h2>
 		<hr>
 		<h5>Here you can create your complain. </h5>
-		<center><img src="../assets/Data-Management.png"></center>
+		<center><img src="../assets/Data-Management.png" style="height: 76vh;"></center>
 	</div>
 
 	</div>

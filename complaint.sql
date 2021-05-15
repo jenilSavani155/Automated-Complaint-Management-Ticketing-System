@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 03:29 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: May 15, 2021 at 05:20 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `fullName`, `password`, `image`) VALUES
-(1, 'Admin', 'savan makvana', '202cb962ac59075b964b07152d234b70', '');
+(1, 'Admin', 'savan makvana', '202cb962ac59075b964b07152d234b70', ''),
+(2, 'admin', 'admin', '584da0a485f209242059e6de66aac904', '');
 
 -- --------------------------------------------------------
 
@@ -60,9 +61,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `description`, `creationDate`) VALUES
-(1, 'Electricity issue', 'Electricity issue ', '2020-01-05 17:48:30.623732'),
-(3, 'Water issue', 'In this category, All the water related issues will be collected', '2020-01-15 05:13:59.269093'),
-(4, 'Faculty Issue', 'faculty issues goes here...', '2020-01-04 04:17:59.142812');
+(1, 'cloud Storage issue', 'cloud storage out of space', '2021-05-15 15:14:30.731202'),
+(3, 'Technical Issue', 'Hardware support', '2021-05-15 15:15:50.534021'),
+(4, 'Software Issue', 'issue due to software bugs', '2021-05-15 15:16:17.387059');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,8 @@ CREATE TABLE `cloud_engineear` (
 INSERT INTO `cloud_engineear` (`id`, `first_name`, `last_name`, `complaint_number`, `status`, `email`, `password`) VALUES
 (5, 'savan', 'makvana', 14, 'on_work', 'savan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
 (6, 'engg 1', '', 16, 'on_work', 'engg1@aa.com', '202cb962ac59075b964b07152d234b70'),
-(7, 'eng2', '', 0, '', 'e@a.com', '827ccb0eea8a706c4c34a16891f84e7b');
+(7, 'eng2', '', 0, '', 'e@a.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(8, 'jay p', '', 17, 'on_work', 'jay1@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,10 @@ INSERT INTO `complaintremark` (`id`, `complaintNo`, `status`, `remark`, `user_re
 (24, 14, '', '', 'replyyyyyyyyyyyyyyyyyyyyyy from DB', '2021-05-15 13:00:46'),
 (25, 14, '', '', 'fffff', '2021-05-15 13:24:25'),
 (26, 14, '', '', 'reply success fully ', '2021-05-15 13:25:04'),
-(27, 14, '', '', 'rfergtrgtrtrtrtrrtttttttttttttttttt', '2021-05-15 13:25:49');
+(27, 14, '', '', 'rfergtrgtrtrtrtrrtttttttttttttttttt', '2021-05-15 13:25:49'),
+(28, 17, 'in process', 'dbsdbsk', NULL, '2021-05-15 15:07:38'),
+(29, 17, '', '', 'where will you start my work', '2021-05-15 15:08:23'),
+(30, 17, 'in process', 'start soon', NULL, '2021-05-15 15:09:09');
 
 -- --------------------------------------------------------
 
@@ -159,7 +164,8 @@ INSERT INTO `complaints` (`complaintNo`, `user_id`, `cloud_eng_id`, `category_id
 (13, 6, 6, 3, 'BBA', 'e-commerce with admin panel', 'General Query', 'e-commerce with admin panele-commerce with admin panele-commerce with admin panel', 'Data-Management.png', '2021-05-14 19:31:58', 'in process', '2021-05-15 08:40:05'),
 (14, 6, NULL, 4, 'English', 'Formal Shirt', 'General Query', 'Formal ShirtFormal Shirt Formal ShirtFormal ShirtFormal ShirtFormal ShirtFormal ShirtFormal Shirt', 'N/A', '2021-05-15 06:12:06', 'in process', '2021-05-15 06:15:41'),
 (15, 6, 6, 1, 'Computer Science', 'Business Website', 'Complaint', 'Business WebsiteBusiness WebsiteBusiness WebsiteBusiness WebsiteBusiness WebsiteBusiness WebsiteBusiness WebsiteBusiness WebsiteBusiness WebsiteBusiness Website', 'N/A', '2021-05-15 06:24:09', NULL, '2021-05-15 06:25:30'),
-(16, 6, 6, 3, 'Commerce', 'Web Development | Graphic Design | Digital Marketing', 'Complaint', 'Web Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital Marketing', 'N/A', '2021-05-15 06:52:40', NULL, '2021-05-15 06:53:16');
+(16, 6, 6, 3, 'Commerce', 'Web Development | Graphic Design | Digital Marketing', 'Complaint', 'Web Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital MarketingWeb Development | Graphic Design | Digital Marketing', 'N/A', '2021-05-15 06:52:40', NULL, '2021-05-15 06:53:16'),
+(17, 7, 8, 3, 'Commerce', 'fdgdgdbdgg', 'General Query', 'cvcvvcvcvcvnmmbbbrrtrsasdd', 'N/A', '2021-05-15 15:03:10', 'in process', '2021-05-15 15:07:38');
 
 -- --------------------------------------------------------
 
@@ -210,7 +216,8 @@ INSERT INTO `users` (`uid`, `fullName`, `email`, `password`, `department`, `prof
 (2, 'Shahid Raza', 'shahid@gmail.com', 'f3224d90c778d5e456b49c75f85dd668', '', '', '2020-01-03 14:14:58.615533', '0000-00-00 00:00:00.000000'),
 (3, 'Ali Raza', 'ali@gmail.com', '86318e52f5ed4801abe1d13d509443de', '', '', '2020-01-14 15:45:07.011276', '0000-00-00 00:00:00.000000'),
 (5, 'savan', 'savan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '2021-05-11 15:47:39.846316', '0000-00-00 00:00:00.000000'),
-(6, 'user', 'user@aa.com', '202cb962ac59075b964b07152d234b70', '', '', '2021-05-11 15:47:39.846316', '0000-00-00 00:00:00.000000');
+(6, 'user', 'user@aa.com', '202cb962ac59075b964b07152d234b70', '', '', '2021-05-11 15:47:39.846316', '0000-00-00 00:00:00.000000'),
+(7, 'jenil savani', 'jenil1@gmail.com', '202cb962ac59075b964b07152d234b70', '', '', '2021-05-15 15:01:33.619355', '0000-00-00 00:00:00.000000');
 
 --
 -- Indexes for dumped tables
@@ -266,7 +273,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -278,19 +285,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `cloud_engineear`
 --
 ALTER TABLE `cloud_engineear`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `complaintremark`
 --
 ALTER TABLE `complaintremark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `complaintNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `complaintNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -302,7 +309,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
