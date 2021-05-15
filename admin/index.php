@@ -33,7 +33,7 @@ $closed_complaints = $complaint->executeQuery($query3);
   <div id="wrapper">
    <!-- Sidebar -->
    
-       <ul class="sidebar navbar-nav mr-4" >
+       <ul class="sidebar navbar-nav mr-4"  style="background-color: #002a53 !important;">
   
     <div style="text-align:center" class="mt-2">
          <img src="admin.jpg" class="rounded-circle ml-2 mt-0 m-auto d-block" width="85"> 

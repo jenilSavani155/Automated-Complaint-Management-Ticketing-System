@@ -1,6 +1,6 @@
  <!-- Sidebar -->
 
-    <ul class="sidebar navbar-nav mr-4" >
+    <ul class="sidebar navbar-nav mr-4" style="background-color: #002a53 !important;">
       
              
       <div style="text-align:center" class="mt-2">

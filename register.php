@@ -23,7 +23,7 @@ $user = new users($db);
   
   
 
-  <title>Complaint Management System - User Registeration</title>
+  <title>Complaint Management System - Registeration</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -111,6 +111,17 @@ body{
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label>Register as: </label>
+                  <select name="role" class="form-control">
+                    <option value="user">User</option>
+                    <option value="cloud_eng">Cloud Engineer</option>
+                  </select>
+              </div>
+            </div>
+          </div>
           <input type="submit" name="submit" class="btn btn-primary btn-block" value="Register">
         </form>
         <?php 
@@ -119,14 +130,17 @@ body{
               $email = $_POST['email'];
               $pass = md5($_POST['password']);
               $confirmPass = md5($_POST['confirmPassword']);
+              $role = $_POST['role'];
               if($pass !== $confirmPass){
                 die("Password is not match");
               }else{
-                
-                $query = "INSERT INTO users (fullName,email,password)VALUES('$fullName','$email','$pass')";
-                $user->create_user($query);
+                 if($role == 'user'){
+                  $query = "INSERT INTO users (fullName,email,password)VALUES('$fullName','$email','$pass')";
+                  }else{
+                    $query = "INSERT INTO cloud_engineear (first_name,email,password)VALUES('$fullName','$email','$pass')";
+                  }
+                 $user->create_user($query);  
               }
-
           }
   
         ?>

@@ -1,12 +1,4 @@
 <?php
-// echo $pwd = "ansari";
-// echo $encpwd = md5($pwd);
-// $pd = "ansari";
-// if($encpwd == md5($pd)){
-// 	echo "logged in";
-// }else{
-// 	echo "pass is wrong";
-// }
 if(isset($_GET['cid'])): 
 	$id = $_GET['cid'];
 	$query = "SELECT * FROM complaints WHERE complaintNo=$id";
@@ -48,10 +40,7 @@ if(isset($_GET['cid'])):
 					foreach($cate as $cat){
 						echo $cat->category_name;
 					}
-
-
 			 ?>
-			
 		</td>
 	
 		<td>Department:</td>
@@ -72,19 +61,18 @@ if(isset($_GET['cid'])):
 		<td colspan="5"><?php echo $cmp->complaint_detail; ?></td>
 	</tr>
 
-	<?php 
+		<tr><td>Remark:</td><td colspan="5">
+			<?php 
 			$query = "SELECT * FROM complaintremark WHERE complaintNo=$cmp->complaintNo";
 			$remark = $complaint->get_data($query);
 			if(!empty($remark)){
-			foreach($remark as $rem): ?>
-			<tr>
-			<td >Remark:</td>
-		<td colspan="5"><?php echo $rem->remark; ?><br><strong>Remark Date:</strong> <?php echo $rem->remarkDate; ?></td>
-			</tr>
-				<?php
+			foreach($remark as $rem): 
+			echo "<strong>User : </strong>".$rem->user_remark;?><br><strong>Remark Date:</strong><?php echo $rem->remarkDate."<br>" ;
+			echo "<strong>You : </strong>".$rem->remark;?><br><strong>Remark Date:</strong><?php echo $rem->remarkDate."<br>" ;
 			endforeach;
 		}
-		?>
+		?></td>
+	</tr>
 
 	<tr>
 		<td>File:</td>
@@ -126,6 +114,7 @@ if(isset($_GET['cid'])):
 				 	
 				 </td>
 	</tr>
+	
 	<tr>
 		<td>Action: </td>
 		<td colspan="5">

@@ -13,6 +13,9 @@ if(isset($_REQUEST['complaint_id']) && $_REQUEST['complaint_id'] != '')
 
 	$q = "UPDATE cloud_engineear SET complaint_number = $complaint_id,status='on_work' where id= $eng_id";
 	echo $res = $complaint->executeQuery($q);
+
+	$q = "UPDATE complaints SET cloud_eng_id = $eng_id where complaintNo = $complaint_id";
+	echo $res = $complaint->executeQuery($q);
 }
 ?>
 <h3>Not processed yet Complaints</h3>

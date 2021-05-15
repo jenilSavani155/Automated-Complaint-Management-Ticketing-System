@@ -1,5 +1,6 @@
 <?php 
 session_start();
+error_reporting(0);
 	if(!isset($_SESSION['user_logged_in'])){
 		header('location:../index.php');
 
