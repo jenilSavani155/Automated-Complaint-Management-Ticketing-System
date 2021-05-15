@@ -5,7 +5,8 @@ error_reporting(0);
 		header('location:../index.php');
 
 	}
-
+	
+	
 	include('database/config.php');
 	include('../database/complaint.php');
 	include('database/category.php');
