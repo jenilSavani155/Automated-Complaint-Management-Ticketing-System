@@ -6,24 +6,7 @@ include('../database/users.php');
 if(isset($_SESSION['user_logged_in'])){
 	$id = $_SESSION['uid'];
 	
-	$database = new database();
-	$db = $database->getConnection();
-	$users = new users($db);
-	$query = "SELECT * FROM users WHERE uid=$id";
-	$result = $users->get_user($query);
-	foreach($result as $u){
-		$u->uid;
-	}
-
-	
-
-}
-?>
-<h4>Account Setting</h4>
-<form enctype="multipart/form-data" id="myForm">
-<div class="row">
-	<div class="col-sm-6">
-		
+	$database = 
 
 
 User ID<input type="text" name="id" class="form-control" value="<?php echo $u->uid; ?>" readonly>
