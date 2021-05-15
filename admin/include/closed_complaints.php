@@ -1,5 +1,26 @@
 <?php
+$database = new database();
+$db = $database->getConnection();
+$complaint = new complaint($db);
+$query = "SELECT * FROM complaints WHERE status='closed'";
+$complaints = $complaint->get_data($query);
 
+?>
+<h3>Closed Complaints</h3>
+<hr>
+<?php if(!empty($complaints)){?>
+<table class="table table-bordered table-sm" id="myTable">
+	<thead>
+		<tr>
+			<td>Complaint Number</td>
+			<td>Complainant Name</td>
+			<td>Regd Date</td>
+			<td>Status</td>
+			<td>Action</td>
+		</tr>
+	</thead>
+	<?php foreach($complaints as $cmp): ?>
+	<tbody>
 		<tr>
 			<td><?php echo $cmp->complaintNo; ?></td>
 			<td>
