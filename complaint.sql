@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2020 at 07:42 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Generation Time: May 14, 2021 at 07:37 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `fullName`, `password`, `image`) VALUES
-(1, 'Admin', 'Abdulaziz Ansari', '21232f297a57a5a743894a0e4a801fc3', '');
+(1, 'Admin', 'savan makvana', 'e10adc3949ba59abbe56e057f20f883e', '');
 
 -- --------------------------------------------------------
 
@@ -53,7 +52,7 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(55) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `creationDate` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
+  `creationDate` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -68,6 +67,29 @@ INSERT INTO `category` (`category_id`, `category_name`, `description`, `creation
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cloud_engineear`
+--
+
+CREATE TABLE `cloud_engineear` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `complaint_number` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cloud_engineear`
+--
+
+INSERT INTO `cloud_engineear` (`id`, `first_name`, `last_name`, `complaint_number`, `status`, `email`, `password`) VALUES
+(5, 'savan', 'makvana', 11, 'on_work', 'savan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `complaintremark`
 --
 
@@ -76,7 +98,7 @@ CREATE TABLE `complaintremark` (
   `complaintNo` int(55) NOT NULL,
   `status` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
-  `remarkDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `remarkDate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -97,7 +119,10 @@ INSERT INTO `complaintremark` (`id`, `complaintNo`, `status`, `remark`, `remarkD
 (11, 5, 'in process', 'complaint is in process ', '2020-01-14 07:55:58'),
 (12, 8, 'in process', 'work is being done over your complaint', '2020-01-14 15:36:32'),
 (13, 8, 'closed', 'Your issue has been resolved', '2020-01-14 15:38:04'),
-(14, 9, 'in process', 'in process, wait for awhile', '2020-01-15 05:08:29');
+(14, 9, 'in process', 'in process, wait for awhile', '2020-01-15 05:08:29'),
+(15, 1, 'closed', 'tteeetetetet', '2021-05-14 17:14:17'),
+(16, 11, 'in process', 'test', '2021-05-14 17:25:56'),
+(17, 11, 'closed', 'close by savan ', '2021-05-14 17:33:44');
 
 -- --------------------------------------------------------
 
@@ -108,30 +133,32 @@ INSERT INTO `complaintremark` (`id`, `complaintNo`, `status`, `remark`, `remarkD
 CREATE TABLE `complaints` (
   `complaintNo` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `cloud_eng_id` int(11) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
   `department` varchar(255) NOT NULL,
   `complaint_title` varchar(255) NOT NULL,
   `complaint_type` varchar(255) NOT NULL,
   `complaint_detail` mediumtext NOT NULL,
   `complaint_file` varchar(255) NOT NULL,
-  `rgdDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `rgdDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` varchar(55) DEFAULT NULL,
-  `lastUpdation` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+  `lastUpdation` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `complaints`
 --
 
-INSERT INTO `complaints` (`complaintNo`, `user_id`, `category_id`, `department`, `complaint_title`, `complaint_type`, `complaint_detail`, `complaint_file`, `rgdDate`, `status`, `lastUpdation`) VALUES
-(1, 1, 1, 'CS', 'demo title', 'Complaint', 'demo complaint description', 'N/A', '2020-01-08 18:37:59', 'in process', '2020-01-14 05:12:23'),
-(2, 1, 1, 'CS', 'water issue', 'Complaint', 'we are having water issue since many days kindly solve the issue as soon as possible', 'building.jpg', '2020-01-08 18:39:28', 'closed', '2020-01-14 07:30:40'),
-(3, 1, 4, 'English', 'New issue for english dprtmnt', 'Complaint', 'english deprtment isssuee', 'N/A', '2020-01-12 06:10:15', 'closed', '2020-01-14 07:26:59'),
-(4, 1, 1, 'BBA', 'BBA issue', 'Complaint', 'issue in bba ', 'Microsoft-bosque-programming-language.jpg', '2020-01-12 06:13:45', 'closed', '2020-01-14 07:39:24'),
-(5, 1, 1, 'Commerce', 'Exam form issue', 'General Query', 'exam form issue', 'N/A', '2020-01-13 12:38:12', 'in process', '2020-01-14 07:55:58'),
-(6, 2, 4, 'BBA', 'Point Bus issue', 'Complaint', 'we are having issue with the point bus', 'Capture.PNG', '2020-01-13 17:09:00', 'in process', '2020-01-14 07:43:06'),
-(7, 2, 4, 'Commerce', 'general query Title', 'General Query', 'this is the detail of the complaint', 'N/A', '2020-01-14 07:44:33', 'in process', '2020-01-14 07:45:56'),
-(8, 2, 4, 'Commerce', 'No teacher since 4 days', 'Complaint', 'there is no teacher here in our commerce department', 'N/A', '2020-01-14 15:34:38', 'closed', '2020-01-14 15:38:04');
+INSERT INTO `complaints` (`complaintNo`, `user_id`, `cloud_eng_id`, `category_id`, `department`, `complaint_title`, `complaint_type`, `complaint_detail`, `complaint_file`, `rgdDate`, `status`, `lastUpdation`) VALUES
+(1, 1, 5, 1, 'CS', 'demo title', 'Complaint', 'demo complaint description', 'N/A', '2020-01-08 18:37:59', 'in process', '2021-05-14 17:15:30'),
+(2, 1, 5, 1, 'CS', 'water issue', 'Complaint', 'we are having water issue since many days kindly solve the issue as soon as possible', 'building.jpg', '2020-01-08 18:39:28', 'closed', '2021-05-14 17:00:57'),
+(3, 1, NULL, 4, 'English', 'New issue for english dprtmnt', 'Complaint', 'english deprtment isssuee', 'N/A', '2020-01-12 06:10:15', 'closed', '2020-01-14 07:26:59'),
+(4, 1, NULL, 1, 'BBA', 'BBA issue', 'Complaint', 'issue in bba ', 'Microsoft-bosque-programming-language.jpg', '2020-01-12 06:13:45', 'closed', '2020-01-14 07:39:24'),
+(5, 1, NULL, 1, 'Commerce', 'Exam form issue', 'General Query', 'exam form issue', 'N/A', '2020-01-13 12:38:12', 'in process', '2020-01-14 07:55:58'),
+(6, 2, NULL, 4, 'BBA', 'Point Bus issue', 'Complaint', 'we are having issue with the point bus', 'Capture.PNG', '2020-01-13 17:09:00', 'in process', '2020-01-14 07:43:06'),
+(7, 2, NULL, 4, 'Commerce', 'general query Title', 'General Query', 'this is the detail of the complaint', 'N/A', '2020-01-14 07:44:33', 'in process', '2020-01-14 07:45:56'),
+(8, 2, 5, 4, 'Commerce', 'No teacher since 4 days', 'Complaint', 'there is no teacher here in our commerce department', 'N/A', '2020-01-14 15:34:38', 'closed', '2021-05-14 17:01:05'),
+(11, 5, 5, 3, 'Computer Science', 'test complain', 'Complaint', 'testasdfa dfasdfasdfasdf', 'N/A', '2021-05-11 15:48:58', 'closed', '2021-05-14 17:33:44');
 
 -- --------------------------------------------------------
 
@@ -142,8 +169,8 @@ INSERT INTO `complaints` (`complaintNo`, `user_id`, `category_id`, `department`,
 CREATE TABLE `department` (
   `d_id` int(11) NOT NULL,
   `department` varchar(255) NOT NULL,
-  `crreationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `crreationDate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -169,7 +196,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
   `profilePhoto` varchar(255) NOT NULL,
-  `regDate` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `regDate` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
   `updationDate` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -180,7 +207,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`uid`, `fullName`, `email`, `password`, `department`, `profilePhoto`, `regDate`, `updationDate`) VALUES
 (1, 'Ansari', 'abdulaziz@gmail.com', 'd861e207ca85f7e171d3225d4a4536cd', '', '', '2020-01-02 13:02:27.441476', '0000-00-00 00:00:00.000000'),
 (2, 'Shahid Raza', 'shahid@gmail.com', 'f3224d90c778d5e456b49c75f85dd668', '', '', '2020-01-03 14:14:58.615533', '0000-00-00 00:00:00.000000'),
-(3, 'Ali Raza', 'ali@gmail.com', '86318e52f5ed4801abe1d13d509443de', '', '', '2020-01-14 15:45:07.011276', '0000-00-00 00:00:00.000000');
+(3, 'Ali Raza', 'ali@gmail.com', '86318e52f5ed4801abe1d13d509443de', '', '', '2020-01-14 15:45:07.011276', '0000-00-00 00:00:00.000000'),
+(5, 'savan', 'savan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '2021-05-11 15:47:39.846316', '0000-00-00 00:00:00.000000');
 
 --
 -- Indexes for dumped tables
@@ -197,6 +225,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `cloud_engineear`
+--
+ALTER TABLE `cloud_engineear`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `complaintremark`
@@ -239,16 +273,22 @@ ALTER TABLE `category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `cloud_engineear`
+--
+ALTER TABLE `cloud_engineear`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `complaintremark`
 --
 ALTER TABLE `complaintremark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `complaintNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `complaintNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -260,7 +300,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

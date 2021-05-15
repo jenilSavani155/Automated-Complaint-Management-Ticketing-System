@@ -12,7 +12,11 @@ $user = new users($db);
 <html lang="en">
 
 <head>
-
+<style type="text/css">
+  a{
+    color: #fff !important;
+  }
+</style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +32,7 @@ $user = new users($db);
   <link href="css/sb-admin.css" rel="stylesheet">
 <style>
 body{
-  background: url('complaint.jpg')!important;
+  background: url('assets/register.jpg')!important;
   background-size:cover!important;;
   background-repeat: no-repeat!important;;
 
@@ -38,7 +42,37 @@ body{
 </head>
 
 <body class="bg-dark">
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <div class="col-md-12" style="display: flex;color: white">
+    <div class="col-md-2">
+       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="" href="#">
+      <a href="index.php"><i class="fas fa-bars"></i> HOME</a>
+    </button>
+  </div>
+  <div class="col-md-2">
+       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="" href="login.php">
+      <a href="register.php"><i class="fas fa-user"></i> REGISTER </a>
+    </button>
+  </div>
+  <div class="col-md-2">
+       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="" href="our_client.php">
+      <a href="our_client.php"><i class="fas fa-address-card"></i> OUR CLIENTS</a>
+    </button>
+  </div>
 
+  <div class="col-md-2">
+       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="" href="login.php">
+      <a href="login.php"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+    </button>
+  </div>
+  <div class="col-md-2">
+       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="" href="about_us.php">
+      <a href="about_us.php"><i class="fas fa-info"></i> ABOUT US</a>
+    </button>
+  </div>
+  </div>
+   
+  </nav>
   <div class="container">
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
@@ -98,7 +132,7 @@ body{
         ?>
         <div class="text-center">
           
-          Already have acct ?<a class="d-block small mt-3" href="index.php">Login Page</a>
+          Already have an Account ?<a class="d-block small mt-3" href="login.php" style="color: green !important;">Login Here</a>
           
         </div>
       </div>
