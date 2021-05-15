@@ -49,6 +49,7 @@ error_reporting(0);
 			<p class="side-tabs" id="lodge-complaint"><i class="fas fa-lg fa-pen"></i><br>Complaint</p>
 			<p class="side-tabs" id="complaint-history"><i class="fas fa-lg fa-list"></i><br>Complaint History</p>
 			<p class="side-tabs" id="setting"><i class="fas fa-lg fa-cog"></i><br>Acount Setting</p>
+			<p class="side-tabs" id="faq"><i class="fas fa-lg fa-question-circle"></i><br>FAQ</p>
 			<a href="logout.php?logout=logout"><p class="side-tabs"><i class="fas fa-lg fa-sign-out-alt"></i><br>Logout</a></p>
 		</div>
 
@@ -86,6 +87,9 @@ error_reporting(0);
 					break;
 				case 'setting':
 					$('#content').load('include/account_setting.php');
+					break;
+					case 'faq':
+					$('#content').load('include/faq.php');
 					break;
 				default:
 					$('#content').load('include/dashboard.php');
