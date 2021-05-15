@@ -75,18 +75,6 @@
           </div>
         </div>
 
-
-  
-      <script>
-        $(document).ready(function(){
-          $("#send").click(function(e){
-            e.preventDefault();
-            var start_date = $("#start_date").value();
-            var end_date = $("#end_date").value();
-            var message = $("#message").value();
-            alert(start_date);
-          });
-
           
         });
       </script>

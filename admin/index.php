@@ -7,7 +7,25 @@
 
  ?>
 
- <?phpQuery($query3);
+ <?php
+include('../database/config.php');
+include('../database/complaint.php');
+include('../user/database/users.php');
+include('database/category.php');
+$database = new database();
+$db = $database->getConnection();
+$category = new category($db);
+$department = new category($db);
+$complaint = new complaint($db);
+$users = new users($db);
+$user_query = "SELECT * FROM users";
+$u = $users->executeQuery($user_query);
+$query1 = "SELECT * FROM complaints WHERE status is null";
+$query2 = "SELECT * FROM complaints WHERE status = 'in process'";
+$query3 = "SELECT * FROM complaints WHERE status = 'closed'";
+$notprocess_complaints = $complaint->executeQuery($query1);
+$inprocess = $complaint->executeQuery($query2);
+$closed_complaints = $complaint->executeQuery($query3);
 
 ?>
 
