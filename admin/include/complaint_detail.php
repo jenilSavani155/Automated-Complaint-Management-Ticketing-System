@@ -1,4 +1,14 @@
+<?php
 
+if(isset($_GET['cid'])): 
+	$id = $_GET['cid'];
+	$query = "SELECT * FROM complaints WHERE complaintNo=$id";
+	$complaints = $complaint->get_complaints_by_uid($query);
+	foreach($complaints as $cmp){
+//		$cmp->complaintNo;
+	}
+	
+?>
 <h4>Complaint Details: </h4>
 <table class="table table-bordered table-sm" style="padding:4px!important;">
 	<tr>
