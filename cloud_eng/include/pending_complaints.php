@@ -1,4 +1,11 @@
+<?php
+$database = new database();
+$db = $database->getConnection();
+$complaint = new complaint($db);
+$query = "SELECT * FROM complaints WHERE cloud_eng_id=$uid AND status='in process'";
+$complaints = $complaint->get_data($query);
 
+?>
 <h3>Pending Complaints</h3>
 <hr>
 <?php if(!empty($complaints)){?>
