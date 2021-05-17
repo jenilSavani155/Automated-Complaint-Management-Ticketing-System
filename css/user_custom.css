@@ -1,38 +1,37 @@
-body{
-	background:#e9ecef!important;
+body {
+	background: #e9ecef !important;
 }
-.side-tabs{
-	padding:20px 5px;
-	height:90px;
-	text-align:center;
-	display:block;
-	background:#e9ecef;
-	color:#777676;
-	line-height:1.5;
-	margin:0px;
-	
-	border-bottom:1px solid #e9ecef;
-}
-.side-tabs{
-	cursor:pointer;
-	margin:0px;
+.side-tabs {
+	padding: 20px 5px;
+	height: 90px;
+	text-align: center;
+	display: block;
+	background: #e9ecef;
+	color: #777676;
+	line-height: 1.5;
+	margin: 0px;
 
+	border-bottom: 1px solid #e9ecef;
 }
-.side-tabs:hover{
-	background:#4b4c4c;
-	color:white;
-	transition:0.5s ease-in;
+.side-tabs {
+	cursor: pointer;
+	margin: 0px;
 }
-.active{
-	background:#343a40!important;
-	color:white;
+.side-tabs:hover {
+	background: #4b4c4c;
+	color: white;
+	transition: 0.5s ease-in;
 }
-.tabs-area{
-	background:white;
-	padding:5px;
+.active {
+	background: #dc3545 !important;
+	color: white;
 }
-body{
-  background:url('../assets/complaint.png');
-  background-repeat:no-repeat;
-  background-size:cover;
+.tabs-area {
+	background: white;
+	padding: 5px;
+}
+body {
+	background: url('../assets/complaint.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
