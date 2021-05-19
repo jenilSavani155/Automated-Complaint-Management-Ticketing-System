@@ -49,8 +49,8 @@ body{
 
 </head>
 
-<body class="bg-dark">
-<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+<body style="background-color: #dc3545 !important;" class="bg-red">
+<nav style="background-color: #dc3545 !important;" class="navbar navbar-expand navbar-dark bg-red static-top">
   <div class="col-md-12" style="display: flex;color: white">
     <div class="col-md-2">
        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="" href="#">

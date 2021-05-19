@@ -21,7 +21,7 @@ error_reporting(0);
 <div class="container">
 	
 		
-			<div class="row border top-navbar bg-dark text-light p-2">
+			<div style="background-color: #dc3545 !important;" class="row border top-navbar bg-red text-light p-2">
 				<h4>Complaint Management System</h4>
 
 			</div>
@@ -63,7 +63,7 @@ error_reporting(0);
 	</div>
 		
 	
-	<footer class="footer text-center bg-dark text-light">Copyright all reserverd</footer>
+	<footer style="background-color: #dc3545 !important;" class="footer text-center bg-red text-light">Copyright all reserved</footer>
 </div>
 </body>
 </html>

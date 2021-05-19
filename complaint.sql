@@ -7,9 +7,11 @@
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
+CREATE DATABASE complaint;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "+00:00"; 
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -185,10 +187,11 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`d_id`, `department`, `crreationDate`, `updationDate`) VALUES
-(1, 'Computer Science', '2020-01-05 17:47:27', '2020-01-14 19:00:00'),
-(2, 'Commerce', '2020-01-05 17:47:27', '2020-01-06 19:00:00'),
-(4, 'English', '2020-01-05 18:45:07', '2020-01-06 19:00:00'),
-(5, 'BBA', '2020-01-07 08:33:18', '2020-01-06 19:00:00');
+(1, 'Hardware Support', '2020-01-05 17:47:27', '2020-01-14 19:00:00'),
+(2, 'Software Support', '2020-01-05 17:47:27', '2020-01-06 19:00:00'),
+(4, 'Cloud Computing', '2020-01-05 18:45:07', '2020-01-06 19:00:00'),
+(5, 'General Guidance', '2020-01-07 08:33:18', '2020-01-06 19:00:00'),
+(6, 'Storage Support', '2020-01-07 08:35:18', '2020-01-06 19:00:00');
 
 -- --------------------------------------------------------
 
