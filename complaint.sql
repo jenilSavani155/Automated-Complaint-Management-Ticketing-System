@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2021 at 03:56 PM
+-- Generation Time: May 23, 2021 at 11:01 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `admin`
 --
+
+CREATE DATABASE complaint;
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
@@ -74,7 +76,7 @@ CREATE TABLE `cloud_engineear` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) DEFAULT NULL,
-  `complaint_number` int(11) DEFAULT NULL,
+  `complaint_number` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL
