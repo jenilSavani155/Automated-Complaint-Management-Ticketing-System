@@ -32,7 +32,7 @@ $closed_complaints = $complaint->executeQuery($query3);
 ?>
 
  <?php include('include/header.php'); ?>
-  <div id="wrapper" style="display: none;">
+  <div id="wrapper">
    <!-- Sidebar -->
    
        <ul class="sidebar navbar-nav mr-4" >
