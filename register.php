@@ -82,10 +82,12 @@ body{
             <div class="form-row">
               <div class="col-md-12">
                 <div class="form-label-group">
-                  <input type="text" id="fullName" name='fullName' class="form-control" placeholder="Full name" required="required" autofocus="autofocus">
-                  <label for="fullName">Full name</label>
+                  <input type="text" id="fullName" name='firstName' class="form-control" placeholder="First name" required="required" autofocus="autofocus">
+                  <label for="fullName">First Name</label>
                 </div>
+                <!--TODO: need to add another input for last name and attach it with the backend -->
               </div>
+              
               
             </div>
           </div>

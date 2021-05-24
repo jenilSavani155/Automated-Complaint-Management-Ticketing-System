@@ -89,7 +89,7 @@ body{
           <div class="form-group">
             <div class="form-label-group">
               <input type="text" id="inputEmail" class="form-control" name="email" placeholder="Email address" required="required" autofocus="autofocus">
-              <label for="inputEmail">Email or username</label>
+              <label for="inputEmail">Email</label>
             </div>
           </div>
           <div class="form-group">
