@@ -20,7 +20,7 @@ class admin{
 		$result = $this->executeQuery($query);
 		if($result->num_rows > 0){
 			while($row = $result->fetch_object()){
-				$_SESSION['fullName'] = $row->fullName;
+				$_SESSION['full_name'] = $row->full_name;
 				$_SESSION['admin_logged_in'] = true;
 				header('location:admin/index.php');
 			}

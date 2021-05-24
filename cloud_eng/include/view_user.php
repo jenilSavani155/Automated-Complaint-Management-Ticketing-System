@@ -4,7 +4,7 @@ if(isset($_GET['uid'])){
 	$query = "SELECT * FROM users WHERE uid=$uid";
 	$user = $users->get_user($query);
 	foreach($user as $u){
-		$u->fullName;
+		$u->full_name;
 	}
 
 
@@ -20,7 +20,7 @@ if(isset($_GET['uid'])){
 	<?php	}else{	?>
 		<img src="../user/profile/dummy-profile.jpg" width="70" style="float:left;"><br>
 	<?php } ?>
-<h4> <?php echo $u->fullName; ?>'s Profile</h4><br>
+<h4> <?php echo $u->full_name; ?>'s Profile</h4><br>
 <table class="table table-sm">
 	<tr>
 		<td><strong>User Id:</strong></td>
@@ -28,7 +28,7 @@ if(isset($_GET['uid'])){
 	</tr>
 	<tr>
 		<td><strong>Full Name:</strong></td>
-		<td><?php echo $u->fullName; ?></td>
+		<td><?php echo $u->full_name; ?></td>
 	</tr>
 	<tr>
 		<td><strong>Email:</strong></td>

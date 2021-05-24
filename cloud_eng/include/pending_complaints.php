@@ -28,7 +28,7 @@ $complaints = $complaint->get_data($query);
 			 	$query1="SELECT * FROM users WHERE uid=$cmp->user_id";
 			 	$result = $complaint->get_data($query1);
 			 	foreach($result as $res){
-			 		echo $res->fullName;
+			 		echo $res->full_name;
 			 	}
 
 			 ?>

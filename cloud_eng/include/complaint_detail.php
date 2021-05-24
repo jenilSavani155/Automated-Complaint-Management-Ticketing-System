@@ -21,7 +21,7 @@ if(isset($_GET['cid'])):
 					$user = $complaint->get_data($query);
 					
 					foreach($user as $u){
-						echo $u->fullName;
+						echo $u->full_name;
 					}
 
 

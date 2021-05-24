@@ -32,7 +32,7 @@ CREATE DATABASE complaint;
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(55) NOT NULL,
-  `fullName` varchar(55) NOT NULL,
+  `full_name` varchar(55) NOT NULL,
   `password` varchar(55) NOT NULL,
   `image` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `fullName`, `password`, `image`) VALUES
+INSERT INTO `admin` (`id`, `username`, `full_name`, `password`, `image`) VALUES
 (1, 'Admin', 'savan makvana', '202cb962ac59075b964b07152d234b70', '');
 
 -- --------------------------------------------------------
@@ -74,10 +74,9 @@ INSERT INTO `category` (`category_id`, `category_name`, `description`, `creation
 
 CREATE TABLE `cloud_engineear` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
-  `complaint_number` int(11) NOT NULL,
-  `status` varchar(255) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
+  `complaint_number` int(11) NOT NULL DEFAULT 0,
+  `status` varchar(255) NOT NULL DEFAULT 'idle',
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -86,10 +85,10 @@ CREATE TABLE `cloud_engineear` (
 -- Dumping data for table `cloud_engineear`
 --
 
-INSERT INTO `cloud_engineear` (`id`, `first_name`, `last_name`, `complaint_number`, `status`, `email`, `password`) VALUES
-(5, 'savan', 'makvana', 14, 'on_work', 'savan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
-(6, 'engg 1', '', 16, 'on_work', 'engg1@aa.com', '202cb962ac59075b964b07152d234b70'),
-(7, 'eng2', '', 0, '', 'e@a.com', '827ccb0eea8a706c4c34a16891f84e7b');
+INSERT INTO `cloud_engineear` (`id`, `full_name`, `complaint_number`, `status`, `email`, `password`) VALUES
+(5, 'savan makvana', 14, 'on_work', 'savan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(6, 'engg 1', 16, 'on_work', 'engg1@aa.com', '202cb962ac59075b964b07152d234b70'),
+(7, 'eng2', 0, 'idle', 'e@a.com', '827ccb0eea8a706c4c34a16891f84e7b');
 
 -- --------------------------------------------------------
 
@@ -194,7 +193,7 @@ INSERT INTO `department` (`d_id`, `department`, `crreationDate`, `updationDate`)
 
 CREATE TABLE `users` (
   `uid` int(11) NOT NULL,
-  `fullName` varchar(255) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `department` varchar(255) DEFAULT NULL,
@@ -207,7 +206,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`uid`, `fullName`, `email`, `password`, `department`, `profilePhoto`, `regDate`, `updationDate`) VALUES
+INSERT INTO `users` (`uid`, `full_name`, `email`, `password`, `department`, `profilePhoto`, `regDate`, `updationDate`) VALUES
 (1, 'Ansari', 'abdulaziz@gmail.com', 'd861e207ca85f7e171d3225d4a4536cd', '', '', '2020-01-02 13:02:27.441476', '0000-00-00 00:00:00.000000'),
 (2, 'Shahid Raza', 'shahid@gmail.com', 'f3224d90c778d5e456b49c75f85dd668', '', '', '2020-01-03 14:14:58.615533', '0000-00-00 00:00:00.000000'),
 (3, 'Ali Raza', 'ali@gmail.com', '86318e52f5ed4801abe1d13d509443de', '', '', '2020-01-14 15:45:07.011276', '0000-00-00 00:00:00.000000'),

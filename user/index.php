@@ -29,7 +29,7 @@ error_reporting(0);
 	<div class="row border bg-light p-2">
 
 		<div class="col-6">
-		<h1>Hello <?php echo $_SESSION['fullName']; ?></h1>
+		<h1>Hello <?php echo $_SESSION['full_name']; ?></h1>
 		<p><?php echo date('D,F,Y'); ?></p>
 		</div>
 		<div class="col-sm-2">
