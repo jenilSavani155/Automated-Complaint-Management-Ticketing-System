@@ -40,7 +40,7 @@ if(isset($_REQUEST['complaint_id']) && $_REQUEST['complaint_id'] != '')
 			 	$query1="SELECT * FROM users WHERE uid=$cmp->user_id";
 			 	$result = $complaint->get_data($query1);
 			 	foreach($result as $res){
-			 		echo $res->fullName;
+			 		echo $res->full_name;
 			 	}
 
 			 ?>
@@ -75,7 +75,7 @@ if(isset($_REQUEST['complaint_id']) && $_REQUEST['complaint_id'] != '')
 				<?php 
 				foreach($engData as $res){
 					echo "<option value=".$res->id.">";
-					echo $res->first_name." ".$res->last_name;
+					echo $res->full_name;
 					echo "</option>";
 				}
 			?>

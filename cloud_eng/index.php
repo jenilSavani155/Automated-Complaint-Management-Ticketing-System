@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
  session_start();
  if(!isset($_SESSION['cloud_eng_logged_in'])){
   header('location:../index.php');
@@ -39,7 +40,7 @@ $closed_complaints = $complaint->executeQuery($query3);
   
     <div style="text-align:center" class="mt-2">
          <img src="admin.jpg" class="rounded-circle ml-2 mt-0 m-auto d-block" width="85"> 
-         <h6><a href="#" class="text-light"><?php echo $_SESSION['fullName']; ?></a></h6>
+         <h6><a href="#" class="text-light"><?php echo $_SESSION['full_name']; ?></a></h6>
          <p class="text-light"><span class="badge badge-success text-success online">0</span> online</p>
     </div>
 

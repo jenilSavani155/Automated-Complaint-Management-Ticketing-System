@@ -1,4 +1,4 @@
-      <footer class="sticky-footer">
+      <footer style="background-color: #dc3545 !important;" class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright © Complaint Management System 2021</span>

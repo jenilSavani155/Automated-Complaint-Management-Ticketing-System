@@ -82,10 +82,12 @@ body{
             <div class="form-row">
               <div class="col-md-12">
                 <div class="form-label-group">
-                  <input type="text" id="fullName" name='fullName' class="form-control" placeholder="Full name" required="required" autofocus="autofocus">
-                  <label for="fullName">Full name</label>
+                  <input type="text" id="full_name" name='full_name' class="form-control" placeholder="First name" required="required" autofocus="autofocus">
+                  <label for="full_name">Full Name</label>
                 </div>
+                <!--TODO: need to add another input for last name and attach it with the backend -->
               </div>
+              
               
             </div>
           </div>
@@ -126,7 +128,7 @@ body{
         </form>
         <?php 
           if(isset($_POST['submit'])){
-              $fullName = $_POST['fullName'];
+              $full_name = $_POST['full_name'];
               $email = $_POST['email'];
               $pass = md5($_POST['password']);
               $confirmPass = md5($_POST['confirmPassword']);
@@ -135,9 +137,9 @@ body{
                 die("Password is not match");
               }else{
                  if($role == 'user'){
-                  $query = "INSERT INTO users (fullName,email,password)VALUES('$fullName','$email','$pass')";
+                  $query = "INSERT INTO users (full_name,email,password)VALUES('$full_name','$email','$pass')";
                   }else{
-                    $query = "INSERT INTO cloud_engineear (first_name,email,password)VALUES('$fullName','$email','$pass')";
+                    $query = "INSERT INTO cloud_engineear (full_name,email,password)VALUES('$full_name','$email','$pass')";
                   }
                  $user->create_user($query);  
               }

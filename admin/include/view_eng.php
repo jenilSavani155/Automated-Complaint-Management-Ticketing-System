@@ -1,15 +1,14 @@
 <?php
 if(isset($_GET['uid'])){
 	$uid= $_GET['uid'];
-	$query = "SELECT * FROM users WHERE uid=$uid";
-	$user = $users->get_user($query);
+	$query = "SELECT * FROM cloud_engineear WHERE id=$uid";
+	$user = $complaint->get_data($query);
 	foreach($user as $u){
 		$u->full_name;
 	}
 
 
 }
-
 
 ?>
 <div class="row">
@@ -24,7 +23,7 @@ if(isset($_GET['uid'])){
 <table class="table table-sm">
 	<tr>
 		<td><strong>User Id:</strong></td>
-		<td><?php echo $u->uid; ?></td>
+		<td><?php echo $u->id; ?></td>
 	</tr>
 	<tr>
 		<td><strong>Full Name:</strong></td>
@@ -34,18 +33,7 @@ if(isset($_GET['uid'])){
 		<td><strong>Email:</strong></td>
 		<td><?php echo $u->email; ?></td>
 	</tr>
-	<tr>
-		<td><strong>Department:</strong></td>
-		<td><?php echo $u->department; ?></td>
-	</tr>
-	<tr>
-		<td><strong>Creation Date:</strong></td>
-		<td><?php echo $u->regDate; ?></td>
-	</tr>
-	<tr>
-		<td><strong>Last Updation Date:</strong></td>
-		<td><?php echo $u->updationDate; ?></td>
-	</tr>
+	
 </table>
 </div>
 </div>

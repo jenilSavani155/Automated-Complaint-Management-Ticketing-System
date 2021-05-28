@@ -15,11 +15,11 @@ if(isset($_POST['action'])){
 	$tmp_name = $_FILES['image']['tmp_name'];
 	if(!empty($img_name)){
 		move_uploaded_file($tmp_name, '../profile/'.$img_name);
-		$query = "UPDATE users SET fullName='$name', department='$department', profilePhoto='$img_name' WHERE uid=$id";	
+		$query = "UPDATE users SET full_name='$name', department='$department', profilePhoto='$img_name' WHERE uid=$id";	
 		$users->executeQuery($query);
 	}
 
-	$query = "UPDATE users SET fullName='$name', department='$department', profilePhoto='$img_name' WHERE uid=$id";	
+	$query = "UPDATE users SET full_name='$name', department='$department', profilePhoto='$img_name' WHERE uid=$id";	
 	if($users->executeQuery($query)){
 		echo "Profile Updated";
 	}

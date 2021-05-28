@@ -45,7 +45,7 @@ class users{
 			while($row = $result->fetch_object()){
 				// $data[] = $row; 
 				 $_SESSION['uid'] = $row->uid;
-				 $_SESSION['fullName'] = $row->fullName;
+				 $_SESSION['full_name'] = $row->full_name;
 				 $_SESSION['email'] = $row->email;
 				 $_SESSION['user_logged_in'] = true;
 				header('location:user/index.php');

@@ -26,7 +26,7 @@ $user = $users->get_data($query);
 	<tbody>
 		<tr>
 			<td><?php echo $u->uid; ?></td>
-			<td><?php echo $u->fullName; ?></td>
+			<td><?php echo $u->full_name; ?></td>
 			<td><?php echo $u->email; ?></td>
 			<td><?php echo $u->regDate; ?></td>
 			

@@ -1,4 +1,5 @@
  <?php 
+ error_reporting(0);
  session_start();
  if(!isset($_SESSION['admin_logged_in'])){
   header('location:../index.php');
@@ -136,6 +137,9 @@ $closed_complaints = $complaint->executeQuery($query3);
             break;
           case 'view_user':
             include('include/view_user.php');
+            break;
+        case 'view_eng':
+            include('include/view_eng.php');
             break;
         }
        }else{

@@ -4,10 +4,15 @@ if(isset($_GET['cid'])):
 	$id = $_GET['cid'];
 	$query = "SELECT * FROM complaints WHERE complaintNo=$id";
 	$complaints = $complaint->get_complaints_by_uid($query);
+
+	
+
 	foreach($complaints as $cmp){
 //		$cmp->complaintNo;
 	}
-	
+
+	$eng_q = "SELECT * FROM cloud_engineear WHERE id= $cmp->cloud_eng_id";
+	$eng = $complaint->get_data($eng_q);
 ?>
 <h4>Complaint Details: </h4>
 <table class="table table-bordered table-sm" style="padding:4px!important;">
@@ -21,7 +26,7 @@ if(isset($_GET['cid'])):
 					$user = $complaint->get_data($query);
 					
 					foreach($user as $u){
-						echo $u->fullName;
+						echo $u->full_name;
 					}
 
 
@@ -79,6 +84,13 @@ if(isset($_GET['cid'])):
 		?>
 
 	<tr>
+		<td>Cloud Engineear:</td>
+
+		<td colspan="5">
+			<?php echo (isset($eng[0]->full_name)) ? $eng[0]->full_name :'-';?>
+		</tr>
+	
+	<tr>
 		<td>File:</td>
 
 		<td colspan="5">
@@ -121,7 +133,18 @@ if(isset($_GET['cid'])):
 	<tr>
 		<td>Action: </td>
 		<td colspan="5">
-			<a href="index.php?page=take_action&cid=<?php echo $cmp->complaintNo;?>"><button class="btn btn-sm btn-primary">Take Action</button></a>
+		<?php 
+			if(isset($eng[0]->id))
+			{?>
+				<a href="index.php?page=view_eng&uid=<?php echo $eng[0]->id;?>"><button class="btn btn-sm btn-primary">View cloud engineear</button></a>
+		<?php	
+			}else{
+				?>
+					<a  href=""><button style="cursor:no-drop" disabled class="btn btn-sm btn-primary">View cloud engineear</button></a>
+				<?php
+			}
+		?>
+			
 			<a href="index.php?page=view_user&uid=<?php echo $cmp->user_id; ?>"> <button class="btn btn-sm btn-info">View User</button>
 		</td>
 	</tr>

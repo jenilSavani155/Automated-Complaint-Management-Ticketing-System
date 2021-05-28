@@ -11306,7 +11306,7 @@ footer.sticky-footer {
 	bottom: 0;
 	width: calc(100% - 90px);
 	height: 80px;
-	background-color: #e9ecef;
+	background-color: #dc3545 !important;
 }
 
 footer.sticky-footer .copyright {

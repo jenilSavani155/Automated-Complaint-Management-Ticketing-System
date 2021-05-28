@@ -27,7 +27,7 @@ if(isset($_SESSION['user_logged_in'])){
 
 
 User ID<input type="text" name="id" class="form-control" value="<?php echo $u->uid; ?>" readonly>
-Name:<input type="text" name="name" class="form-control" value="<?php echo $u->fullName; ?>">
+Name:<input type="text" name="name" class="form-control" value="<?php echo $u->full_name; ?>">
 <?php 
 	if(!empty($u->profilePhoto)){
 		echo "<img src='profile/$u->profilePhoto' width='80'>";
