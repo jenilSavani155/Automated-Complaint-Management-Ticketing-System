@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
  session_start();
  if(!isset($_SESSION['cloud_eng_logged_in'])){
   header('location:../index.php');

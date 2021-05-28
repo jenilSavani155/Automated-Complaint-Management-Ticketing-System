@@ -14,6 +14,20 @@ error_reporting(0);
 		$database = new database();
 		$db = $database->getConnection();
 		$category = new category($db);
+		$id=$_SESSION['uid'];
+		$complaint = new complaint($db);
+	    $query = "SELECT * FROM complaints WHERE user_id=$id AND status = 'in process' ";
+		$complaints_in_process = $complaint->get_complaints_by_uid($query);
+		$complaints_in_process = count($complaints_in_process);
+
+		
+		$query = "SELECT * FROM complaints WHERE user_id=$id AND status = 'closed' ";
+		$complaints_close = $complaint->get_complaints_by_uid($query);
+		$complaints_close = count($complaints_close);
+		
+		$query = "SELECT * FROM complaints WHERE user_id=$id AND status IS NULL ";
+		$complaints_null= $complaint->get_complaints_by_uid($query);
+		$complaints_null = count($complaints_null);
 		
 	?>
 <?php include('include/header.php'); ?>
@@ -33,13 +47,14 @@ error_reporting(0);
 		<p><?php echo date('D,F,Y'); ?></p>
 		</div>
 		<div class="col-sm-2">
-			<p class="side-tabs" id=""><i class="fas fa-lg fa-newspaper"></i><br>Not yet processed complaints</p>
+
+			<p class="side-tabs" id=""><span><?php echo $complaints_null; ?></span><span>&nbsp;</span><i class="fas fa-lg fa-newspaper"></i><br>Not yet processed complaints</p>
 		</div>
 		<div class="col-sm-2">
-			<p class="side-tabs" id=""><i class="fas fa-lg fa-newspaper"></i><br> Complaints that are in process</p>
+			<p class="side-tabs" id=""><span><?php echo $complaints_in_process; ?></span><span>&nbsp;</span><i class="fas fa-lg fa-newspaper"></i><br> Complaints that are in process</p>
 		</div>
 		<div class="col-sm-2">
-			<p class="side-tabs" id=""><i class="fas fa-lg fa-newspaper"></i><br> Complaints that have been closed</p>
+			<p class="side-tabs" id=""><span><?php echo $complaints_close; ?></span><span>&nbsp;</span><i class="fas fa-lg fa-newspaper"></i><br> Complaints that have been closed</p>
 		</div>
 	</div>
 	

@@ -45,7 +45,7 @@ class cloud_eng{
 			while($row = $result->fetch_object()){
 				// $data[] = $row; 
 				 $_SESSION['uid'] = $row->id;
-				 $_SESSION['full_name'] = $row->first_name." ". $row->last_name;
+				 $_SESSION['full_name'] = $row->full_name;
 				 $_SESSION['email'] = $row->email;
 				 $_SESSION['cloud_eng_logged_in'] = true;
 				header('location:cloud_eng/index.php');

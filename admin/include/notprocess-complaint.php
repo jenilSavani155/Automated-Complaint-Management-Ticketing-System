@@ -75,7 +75,7 @@ if(isset($_REQUEST['complaint_id']) && $_REQUEST['complaint_id'] != '')
 				<?php 
 				foreach($engData as $res){
 					echo "<option value=".$res->id.">";
-					echo $res->first_name." ".$res->last_name;
+					echo $res->full_name;
 					echo "</option>";
 				}
 			?>
