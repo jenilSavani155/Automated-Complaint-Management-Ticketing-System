@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 06:19 PM
+-- Generation Time: May 30, 2021 at 07:59 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -26,8 +26,6 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `admin`
 --
-
-CREATE DATABASE complaint;
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
@@ -81,6 +79,13 @@ CREATE TABLE `cloud_engineear` (
   `password` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cloud_engineear`
+--
+
+INSERT INTO `cloud_engineear` (`id`, `full_name`, `complaint_number`, `status`, `email`, `password`) VALUES
+(1, 's@gmail.com', 1, 'on_work', 's@gmail.com', '202cb962ac59075b964b07152d234b70');
+
 -- --------------------------------------------------------
 
 --
@@ -95,6 +100,13 @@ CREATE TABLE `complaintremark` (
   `user_remark` varchar(255) DEFAULT NULL,
   `remarkDate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `complaintremark`
+--
+
+INSERT INTO `complaintremark` (`id`, `complaintNo`, `status`, `remark`, `user_remark`, `remarkDate`) VALUES
+(1, 1, 'closed', 'done', NULL, '2021-05-28 16:13:49');
 
 -- --------------------------------------------------------
 
@@ -116,6 +128,13 @@ CREATE TABLE `complaints` (
   `status` varchar(55) DEFAULT NULL,
   `lastUpdation` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `complaints`
+--
+
+INSERT INTO `complaints` (`complaintNo`, `user_id`, `cloud_eng_id`, `category_id`, `department`, `complaint_title`, `complaint_type`, `complaint_detail`, `complaint_file`, `rgdDate`, `status`, `lastUpdation`) VALUES
+(1, 1, 1, 1, 'Hardware', 'mmkm', 'Complaint', 'kkmkm', 'N/A', '2021-05-28 16:12:47', 'closed', '2021-05-28 16:13:49');
 
 -- --------------------------------------------------------
 
@@ -156,6 +175,15 @@ CREATE TABLE `users` (
   `regDate` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
   `updationDate` timestamp(6) NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`uid`, `full_name`, `email`, `password`, `department`, `profilePhoto`, `regDate`, `updationDate`) VALUES
+(1, 'j', 'j@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-28 16:12:10.909103', NULL),
+(2, 'k', 'k@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-28 16:16:44.647809', NULL),
+(3, 'q', 'q@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-30 05:58:00.496505', NULL);
 
 --
 -- Indexes for dumped tables
@@ -223,19 +251,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `cloud_engineear`
 --
 ALTER TABLE `cloud_engineear`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `complaintremark`
 --
 ALTER TABLE `complaintremark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `complaintNo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `complaintNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -247,7 +275,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
