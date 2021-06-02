@@ -15,10 +15,14 @@ error_reporting(0);
 		$database = new database();
 		$db = $database->getConnection();
 		$category = new category($db);
+		
 		$id=$_SESSION['uid'];
 		$complaint = new complaint($db);
+		
 	    $query = "SELECT * FROM complaints WHERE user_id=$id AND status = 'in process' ";
+		
 		$complaints_in_process = $complaint->get_complaints_by_uid($query);
+		/* TODO: Something is wrong with this code chunk */
 		$complaints_in_process = count($complaints_in_process);
 
 		
