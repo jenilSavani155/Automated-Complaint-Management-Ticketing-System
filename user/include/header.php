@@ -5,5 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/user_custom.css">
 	<link rel="stylesheet" type="text/css" href="../vendor/fontawesome-free/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link href="../assets/favicon.ico" rel="icon" />
 </head>
 <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>

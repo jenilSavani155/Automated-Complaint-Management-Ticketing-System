@@ -33,6 +33,7 @@ include('database/config.php');
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="assets/favicon.ico" rel="icon" />
 
 </head>
 
@@ -79,7 +80,7 @@ include('database/config.php');
   <!-- Wrapper for slides -->
   <div class="carousel-inner"  style="display: flex;justify-content: center;">
     <div class="item active">
-      <img src="assets/homepage image 1.png" alt="1">
+      <img src="assets/homepage image 3.png" alt="1">
     </div>
 
     <div class="item">
@@ -87,7 +88,7 @@ include('database/config.php');
     </div>
 
     <div class="item">
-      <img src="assets/homepage image 3.png" alt="3">
+      <img src="assets/homepage image 1.png" alt="3">
     </div>
   </div>
 

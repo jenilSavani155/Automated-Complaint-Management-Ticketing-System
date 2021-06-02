@@ -39,6 +39,7 @@ body{
 }
 
 </style>
+<link href="assets/favicon.ico" rel="icon" />
 </head>
 
 <body style="background-color: #dc3545 !important;" class="bg-red">

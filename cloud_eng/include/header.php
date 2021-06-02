@@ -24,6 +24,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="../js/sb-admin.min.js"></script>
+  <link href="../assets/favicon.ico" rel="icon" />
 </head>
 
 <body id="page-top body">

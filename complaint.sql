@@ -27,6 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
+CREATE DATABASE complaint;
+
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(55) NOT NULL,

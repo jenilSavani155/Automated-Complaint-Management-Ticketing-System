@@ -34,7 +34,7 @@ include('database/config.php');
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-
+  <link href="assets/favicon.ico" rel="icon" />
 </head>
 
 <body style="background-color: #dc3545 !important;">
