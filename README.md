@@ -6,7 +6,12 @@
 2. [Installation Guide](#Installation-Guide)
    - [Required Software](#Required-Software)
 3. [User Manuel](#User-Manuel)
+   - [User Roles](#User-Roles)
+     - [Admin Role](#Admin-Role)
+     - [Cloud Engineer Role](#Cloud-Engineer-Role)
+     - [User Role](#User-Role)
 4. [Notes](#Notes)
+5. [Glossary](#Glossary)
 
 ## Introduction
 
@@ -19,7 +24,7 @@ For this app we will need [XAMPP](https://www.apachefriends.org/download.html) t
 - [XAMPP](https://www.apachefriends.org/download.html)
 - [Git](https://git-scm.com/)
 
-After installing XAMPP clone the repo in the `xampp/htdocs` folder.
+After installing Git and XAMPP clone the repo in the `htdocs` folder.
 
 For MacOS go to `Users/username/Application/XAMPP/htdocs`
 ![image showing macos xampp folder structure](assets/readme/macos-folder.png)
@@ -48,4 +53,20 @@ For hosting on the cloud please follow this document from official [XAMPP websit
 
 ## User Manuel
 
+As requested but the client we have divided the users in three different roles with different levels of authorities and functionalities.
+
+### User Roles
+
+- [Admin Role](#Admin-Role)
+- [Cloud Engineer Role](#Cloud-Engineer-Role)
+- [User Role](User-Role)
+
+#### Admin Role
+
+#### Cloud Engineer Role
+
+#### User Role
+
 ## Notes
+
+## Glossary
