@@ -85,7 +85,7 @@ The website will show this message if the registration was a success.
 #### Cloud Engineer Registration
 
 For a cloud engineer you can follow the above user registration but change the `Register As` to `Cloud Engineer`.
-![Cloud Engineer registration screen](avscode-pandocssets/readme/CloudRegistration.png)
+![Cloud Engineer registration screen](assets/readme/CloudRegistration.png)
 
 After that you will be see this message if there are no errors.
 ![Registration conformation message](assets/readme/RegistrationConfirm.png)
@@ -103,7 +103,16 @@ And click go that the end to add that account.
 
 ### Login
 
+For Login go to [`http://localhost/Automated-Complaint-Management-Ticketing-System/login.php`](http://localhost/Automated-Complaint-Management-Ticketing-System/login.php)
+For `Users` and `Cloud Engineer` you will have to use the email you have used to register and the password for that account you setup. Remember to login as a `User` please make sure the `Login As` has `User` selected as so with the `Cloud Engineer` make sure it is `Cloud Engineer`.
+
+For `Admin` you will have to use `Username` for that profile and the password for it and don't forget to make sure you `Login as` an `Admin`.
+
+![Login Screen](assets/readme/LoginPage.png)
+
 ### User Roles
+
+As above we have divided user roles in this app with them having different authority respectively.
 
 #### Admin Role
 
