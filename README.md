@@ -5,7 +5,10 @@
 1. [Introduction](#Introduction)
 2. [Installation Guide](#Installation-Guide)
    - [Required Software](#Required-Software)
+   - [Installation Guide](#INstallation-Guide)
 3. [User Manuel](#User-Manuel)
+   - [Reregistration](#Reregistration)
+   - [Login](#Login)
    - [User Roles](#User-Roles)
      - [Admin Role](#Admin-Role)
      - [Cloud Engineer Role](#Cloud-Engineer-Role)
@@ -23,6 +26,8 @@ For this app we will need [XAMPP](https://www.apachefriends.org/download.html) t
 
 - [XAMPP](https://www.apachefriends.org/download.html)
 - [Git](https://git-scm.com/)
+
+### Installation Steps
 
 After installing Git and XAMPP clone the repo in the `htdocs` folder.
 
@@ -53,7 +58,17 @@ For hosting on the cloud please follow this document from official [XAMPP websit
 
 ## User Manuel
 
+Go to [`http://localhost/Automated-Complaint-Management-Ticketing-System/index.php`](http://localhost/Automated-Complaint-Management-Ticketing-System/index.php)
+
+Where you will be greeted by our Homepage.
+
 As requested but the client we have divided the users in three different roles with different levels of authorities and functionalities.
+
+### Reregistration
+
+You can register as a User or a Cloud Engineer but you will need to wait for a while for the Admin to approve your role you can contact your Admin after you have registered to let them approve your account.
+
+### Login
 
 ### User Roles
 
@@ -70,3 +85,7 @@ As requested but the client we have divided the users in three different roles w
 ## Notes
 
 ## Glossary
+
+| Word | Description          |
+| ---- | -------------------- |
+| repo | repository for short |
