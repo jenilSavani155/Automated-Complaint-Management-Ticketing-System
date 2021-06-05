@@ -7,7 +7,10 @@
    - [Required Software](#Required-Software)
    - [Installation Guide](#INstallation-Guide)
 3. [User Manuel](#User-Manuel)
-   - [Reregistration](#Reregistration)
+   - [Registration](#Registration)
+     - [User Registration](#User-Registration)
+     - [Cloud Engineer Registration](#cloud-Engineer-Registration)
+     - [Admin Registration](#Admin-Registration)
    - [Login](#Login)
    - [User Roles](#User-Roles)
      - [Admin Role](#Admin-Role)
@@ -61,20 +64,46 @@ For hosting on the cloud please follow this document from official [XAMPP websit
 Go to [`http://localhost/Automated-Complaint-Management-Ticketing-System/index.php`](http://localhost/Automated-Complaint-Management-Ticketing-System/index.php)
 
 Where you will be greeted by our Homepage.
+![Home Page](assets/readme/HomePage.png)
 
 As requested but the client we have divided the users in three different roles with different levels of authorities and functionalities.
 
-### Reregistration
+### Registration
 
-You can register as a User or a Cloud Engineer but you will need to wait for a while for the Admin to approve your role you can contact your Admin after you have registered to let them approve your account.
+You can register as a User or a Cloud Engineer but you will need to wait for a while for the Admin to approve your account, you can contact your Admin after you have registered.
+
+#### User Registration
+
+To register as a user enter your `Full Name`, `Email`, `Password` that you want and confirm that password in the text boxes labeled respectively. Before you click on the registration button make sure the `Register As` has been set to`User`.
+
+Here is an example.
+![User registration screen](assets/readme/UserRegistration.png)
+
+The website will show this message if the registration was a success.
+![Registration conformation message](assets/readme/RegistrationConfirm.png)
+
+#### Cloud Engineer Registration
+
+For a cloud engineer you can follow the above user registration but change the `Register As` to `Cloud Engineer`.
+![Cloud Engineer registration screen](avscode-pandocssets/readme/CloudRegistration.png)
+
+After that you will be see this message if there are no errors.
+![Registration conformation message](assets/readme/RegistrationConfirm.png)
+
+#### Admin Registration
+
+For Admin we recommend to have them register right after they are registered. For this we will have to go through MySQL to add them. Go to [`http://localhost/phpmyadmin/index.php?route=/sql&server=1&db=complaint&table=admin&pos=0`](http://localhost/phpmyadmin/index.php?route=/sql&server=1&db=complaint&table=admin&pos=0) this is the table for admin accounts.
+
+Click on `Insert` tab on the `Dashboard` to add a new admin.
+![phpMyAdmin Admin Table Page](assets/readme/AdminTable.png)
+
+After that add the `username`, `full_name` and the MD5 encrypted string of the password the admin wants for the account as shown below. For encryption we recommend this [website](https://www.md5online.org/md5-encrypt.html).
+![inserting admin credentials](assets/readme/insert.png)
+And click go that the end to add that account.
 
 ### Login
 
 ### User Roles
-
-- [Admin Role](#Admin-Role)
-- [Cloud Engineer Role](#Cloud-Engineer-Role)
-- [User Role](User-Role)
 
 #### Admin Role
 
