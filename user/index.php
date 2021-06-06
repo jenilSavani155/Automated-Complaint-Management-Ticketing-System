@@ -23,16 +23,16 @@ error_reporting(0);
 		
 		$complaints_in_process = $complaint->get_complaints_by_uid($query);
 		/* TODO: Something is wrong with this code chunk */
-		$complaints_in_process = count($complaints_in_process);
+		// $complaints_in_process = count($complaints_in_process);
 
 		
-		$query = "SELECT * FROM complaints WHERE user_id=$id AND status = 'closed' ";
-		$complaints_close = $complaint->get_complaints_by_uid($query);
-		$complaints_close = count($complaints_close);
+		// $query = "SELECT * FROM complaints WHERE user_id=$id AND status = 'closed' ";
+		// $complaints_close = $complaint->get_complaints_by_uid($query);
+		// $complaints_close = count($complaints_close);
 		
-		$query = "SELECT * FROM complaints WHERE user_id=$id AND status IS NULL ";
-		$complaints_null= $complaint->get_complaints_by_uid($query);
-		$complaints_null = count($complaints_null);
+		// $query = "SELECT * FROM complaints WHERE user_id=$id AND status IS NULL ";
+		// $complaints_null= $complaint->get_complaints_by_uid($query);
+		// $complaints_null = count($complaints_null);
 		
 	?>
 <?php include('include/header.php'); ?>
