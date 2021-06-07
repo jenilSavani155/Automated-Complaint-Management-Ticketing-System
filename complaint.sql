@@ -40,9 +40,9 @@ CREATE TABLE `admin` (
 --
 -- Dumping data for table `admin`
 --
-
-INSERT INTO `admin` (`id`, `username`, `full_name`, `password`, `image`) VALUES
-(1, 'Admin', 'Admin', '202cb962ac59075b964b07152d234b70', '');
+-- REMOVED TEST USER ACCOUNTS
+-- INSERT INTO `admin` (`id`, `username`, `full_name`, `password`, `image`) VALUES
+-- (1, 'Admin', 'Admin', '202cb962ac59075b964b07152d234b70', '');
 
 -- --------------------------------------------------------
 
@@ -85,8 +85,8 @@ CREATE TABLE `cloud_engineear` (
 -- Dumping data for table `cloud_engineear`
 --
 
-INSERT INTO `cloud_engineear` (`id`, `full_name`, `complaint_number`, `status`, `email`, `password`) VALUES
-(1, 's@gmail.com', 1, 'on_work', 's@gmail.com', '202cb962ac59075b964b07152d234b70');
+-- INSERT INTO `cloud_engineear` (`id`, `full_name`, `complaint_number`, `status`, `email`, `password`) VALUES
+-- (1, 's@gmail.com', 1, 'on_work', 's@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -107,8 +107,8 @@ CREATE TABLE `complaintremark` (
 -- Dumping data for table `complaintremark`
 --
 
-INSERT INTO `complaintremark` (`id`, `complaintNo`, `status`, `remark`, `user_remark`, `remarkDate`) VALUES
-(1, 1, 'closed', 'done', NULL, '2021-05-28 16:13:49');
+-- INSERT INTO `complaintremark` (`id`, `complaintNo`, `status`, `remark`, `user_remark`, `remarkDate`) VALUES
+-- (1, 1, 'closed', 'done', NULL, '2021-05-28 16:13:49');
 
 -- --------------------------------------------------------
 
@@ -135,8 +135,8 @@ CREATE TABLE `complaints` (
 -- Dumping data for table `complaints`
 --
 
-INSERT INTO `complaints` (`complaintNo`, `user_id`, `cloud_eng_id`, `category_id`, `department`, `complaint_title`, `complaint_type`, `complaint_detail`, `complaint_file`, `rgdDate`, `status`, `lastUpdation`) VALUES
-(1, 1, 1, 1, 'Hardware', 'mmkm', 'Complaint', 'kkmkm', 'N/A', '2021-05-28 16:12:47', 'closed', '2021-05-28 16:13:49');
+-- INSERT INTO `complaints` (`complaintNo`, `user_id`, `cloud_eng_id`, `category_id`, `department`, `complaint_title`, `complaint_type`, `complaint_detail`, `complaint_file`, `rgdDate`, `status`, `lastUpdation`) VALUES
+-- (1, 1, 1, 1, 'Hardware', 'mmkm', 'Complaint', 'kkmkm', 'N/A', '2021-05-28 16:12:47', 'closed', '2021-05-28 16:13:49');
 
 -- --------------------------------------------------------
 
@@ -182,10 +182,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`uid`, `full_name`, `email`, `password`, `department`, `profilePhoto`, `regDate`, `updationDate`) VALUES
-(1, 'j', 'j@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-28 16:12:10.909103', NULL),
-(2, 'k', 'k@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-28 16:16:44.647809', NULL),
-(3, 'q', 'q@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-30 05:58:00.496505', NULL);
+-- INSERT INTO `users` (`uid`, `full_name`, `email`, `password`, `department`, `profilePhoto`, `regDate`, `updationDate`) VALUES
+-- (1, 'j', 'j@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-28 16:12:10.909103', NULL),
+-- (2, 'k', 'k@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-28 16:16:44.647809', NULL),
+-- (3, 'q', 'q@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, '2021-05-30 05:58:00.496505', NULL);
 
 --
 -- Indexes for dumped tables
